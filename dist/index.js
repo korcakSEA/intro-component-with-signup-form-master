@@ -10,10 +10,13 @@ const inputs = document.querySelectorAll(".input__field");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  if (validateForm()) {   // if validation passes
+/*   if (validateForm()) {   // if validation passes
     form.submit();        // submit normally (refresh)
-  }
+  } */
 
+  if (validateForm()) {
+    window.location.reload(); // refresh the page
+  }
 });
 
 // Add event listener to each input, so when input element is clicked, errors will be removed
