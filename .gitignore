@@ -4,7 +4,6 @@
 *.xd
 
 # Dependencies
-/node_modules
 /.pnp
 .pnp.js
 yarn.debug.log*
@@ -23,7 +22,6 @@ npm-debug.log*
 
 # Production
 /build
-/dist
 /.next
 /out
 
