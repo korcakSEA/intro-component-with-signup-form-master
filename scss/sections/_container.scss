@@ -1,0 +1,13 @@
+@use '../components/base' as *;
+
+.container{
+  width: clamp(20.4375rem, 3rem + 74vw, 70rem);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: spacing(8);
+  @include respond(desktop){
+    grid-template-columns: repeat(2, 1fr);
+    gap: spacing(6);
+  }
+}

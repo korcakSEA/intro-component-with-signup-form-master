@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+// converting px to rem
+@function px-to-rem($px, $base:16){
+  @return math.div($px,$base)*1rem;
+}
+
+// Media queries
+@mixin respond($breakpoint){
+  @if ($breakpoint == mobile){
+    @media (min-width:350px){ @content; }
+  }
+  @else if ($breakpoint == tablet){
+    @media (min-width:568px){ @content; }
+  }
+  @else if ($breakpoint == desktop){
+    @media (min-width:900px){ @content; }
+  }
+}

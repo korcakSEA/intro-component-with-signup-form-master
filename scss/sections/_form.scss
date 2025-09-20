@@ -1,0 +1,132 @@
+@use '../components/base' as *;
+
+// Offer Text container
+.offer {
+  background-color: $purple-700;
+  margin-bottom: spacing(3);
+  color: $white;
+  text-align: center;
+  padding: spacing(2) spacing(6);
+  border-radius: 10px;
+  box-shadow: 0 5px 0 rgba($color: $gray-900, $alpha: 0.3);
+
+  @include text-preset4-regular;
+
+  span {
+    @include text-preset4-bold
+  }
+
+  ;
+}
+
+// Form container
+.form {
+  background-color: $white;
+  padding: spacing(3);
+
+  @include respond(tablet) {
+    padding: spacing(4) spacing(5);
+  }
+
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: spacing(2);
+
+  @include respond(tablet) {
+    gap: spacing(3);
+  }
+}
+
+// Form container - Input Fields
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(2);
+
+  @include respond(tablet) {
+    gap: spacing(3);
+  }
+
+  @include text-preset4-regular;
+
+  &__container {
+    position: relative;
+
+    .input__field {
+      width: 100%;
+      padding: spacing(2) spacing(3);
+      border: 2px solid $gray-200;
+      border-radius: 5px;
+      font: inherit;
+
+      &:focus{
+        outline: none; //removes default browser outline
+        border: 2px solid $gray-200;
+        color: $gray-900;
+      }
+
+      &.form__field-error {
+        border: none;
+        outline: 2px solid $red-400;
+      }
+
+    }
+
+    .input__icon {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      visibility: hidden;
+    }
+
+    .visible-icon {
+      visibility: visible;
+    }
+
+    .error-msg {
+      @include text-preset5-italic;
+      color: $red-400;
+      text-align: right;
+    }
+
+  }
+
+}
+
+// Form container - Submit Fields
+.submit {
+
+  text-align: center;
+
+  button {
+    @include text-preset4-semiBold;
+    text-transform: uppercase;
+    background-color: $green-400;
+    color: $white;
+    width: 100%;
+    padding: spacing(2) spacing(4);
+    margin-bottom: spacing(1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 hsl(154, 59%, 45%);
+
+    &:hover {
+      background-color: $green-300;
+      box-shadow: 0 5px 0 $green-400;
+
+    }
+  }
+
+  p {
+    @include text-preset5-medium;
+    color: $purple-350;
+
+    span {
+      color: $red-400;
+    }
+  }
+
+
+}

@@ -1,0 +1,32 @@
+@use '../components/base' as *;
+
+
+.header-section{
+  display: grid;
+  place-items: center;
+}
+
+.hero {
+
+  text-align: center;
+  @include respond(desktop) {
+    text-align: left;
+  }
+
+  &__header {
+    @include text-preset2;
+    color: $white;
+    margin-bottom: spacing(2);
+
+    @include respond(tablet) {
+      @include text-preset1;
+    }
+
+  }
+
+  &__text {
+    @include text-preset3;
+    color: $white;
+  }
+
+}
